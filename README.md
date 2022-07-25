@@ -8,5 +8,5 @@ Autogene is an open source Java toolkit developed by Transcendence Engineering f
 2. Computationally-efficiently evaluate the off-target activity of a given sgRNA given a whole genome
 3. Automatically choose, among the possible sgRNA capable of performing a pointwise mutation, the one that minimise the risk of off-target activity
 
-##Collaborations
+## Collaborations
 If you, or your institution are interested in collaborating in this project, please send an email to info[at]transcendence.it
