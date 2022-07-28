@@ -1,6 +1,8 @@
 # Autogene
 An open source tool for whole genome editing
 
+![Logo](autogene_logo.png)
+
 *Project is in a very early stage*
 
 Autogene is an open source Java toolkit developed by Transcendence Engineering for genome- and epigenome-wide editing. The aim of the project is to create an open source algorithm and usable software for automated epi/genetic editing capable of:
