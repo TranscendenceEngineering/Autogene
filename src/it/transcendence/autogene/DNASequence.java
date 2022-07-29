@@ -12,8 +12,8 @@ public class DNASequence{
 
 	public static BitSet a = BitSet.valueOf(new byte[] {0b00});
 	public static BitSet t = BitSet.valueOf(new byte[] {0b11});
-	public static BitSet c = BitSet.valueOf(new byte[] {0b10});
-	public static BitSet g = BitSet.valueOf(new byte[] {0b01});
+	public static BitSet c = BitSet.valueOf(new byte[] {0b01});
+	public static BitSet g = BitSet.valueOf(new byte[] {0b10});
 	
 	private static HashMap<String, BitSet> code(){
 		HashMap<String, BitSet> code = new HashMap<String, BitSet>();
