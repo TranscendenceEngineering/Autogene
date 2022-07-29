@@ -29,6 +29,8 @@ RNA sequences can be stored the same way considering that T and U bases are the 
 ### Histones
 Histone modifications are encoded through the Histone class. It comprises enums for the encoding of subunits and modifications and nested HashMap/Sets for storing the modifications themselves. Please read the code itself for further informations.
 Supported modifications are:
+| enum Mod constant | Modification |
+| ----------------- | ------------ |
 | ME  | methylation     |
 | AC  | acetylation     |
 | CI  | citrullination  |
