@@ -13,13 +13,21 @@ Autogene is an open source Java toolkit developed by Transcendence Engineering f
 Autogene is written in Java for multiplatform interoperability and security reasons.
 
 ## Format
-DNA/RNA Sequences are stored in a BitSet java object, encoded with 2 bits per base, according to the following table:
+### DNA/RNA Sequence
+DNA/RNA Sequences are stored in a BitSet java object encapsulated in the DNASequence class, encoded with 2 bits per base, according to the following table:
 | Nucleobase  | Bits |
 | ----------- | ---- |
 | A | 0b00 |
 | T | 0b11 |
 | C | 0b01 |
 | G | 0b10 |
+
+This encoding scheme is different from the one used in standard 2bit file format, but it make easier to compute the complementary sequence (it can be computed by bitwise NOT operation)
+
+RNA sequences can be stored the same way considering that T and U bases are the same on a "datalink" (OSI 2) level (i.e. they encode the same information with difference in only physical layer).
+
+### Histones
+Histone modifications are encoded through the Histone class. It comprises enums for the encoding of subunits and modifications and nested HashMap/Sets for storing the modifications themselves. Please read the code itself for further informations
 
 ## Collaborations
 If you, or your institution are interested in collaborating in this project, please send an email to info[at]transcendence.it
