@@ -12,5 +12,14 @@ Autogene is an open source Java toolkit developed by Transcendence Engineering f
 
 Autogene is written in Java for multiplatform interoperability and security reasons.
 
+## Format
+DNA/RNA Sequences are stored in a BitSet java object, encoded with 2 bits per base, according to the following table:
+| Nucleobase  | Bits |
+| ----------- | ---- |
+| A | 0b00 |
+| T | 0b11 |
+| C | 0b01 |
+| G | 0b10 |
+
 ## Collaborations
 If you, or your institution are interested in collaborating in this project, please send an email to info[at]transcendence.it
