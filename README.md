@@ -27,7 +27,17 @@ This encoding scheme is different from the one used in standard 2bit file format
 RNA sequences can be stored the same way considering that T and U bases are the same on a "datalink" (OSI 2) level (i.e. they encode the same information with differences in only physical layer).
 
 ### Histones
-Histone modifications are encoded through the Histone class. It comprises enums for the encoding of subunits and modifications and nested HashMap/Sets for storing the modifications themselves. Please read the code itself for further informations
+Histone modifications are encoded through the Histone class. It comprises enums for the encoding of subunits and modifications and nested HashMap/Sets for storing the modifications themselves. Please read the code itself for further informations.
+Supported modifications are:
+| ME  | methylation     |
+| AC  | acetylation     |
+| CI  | citrullination  |
+| UB  | ubiquitination  |
+| P   | phosphorylation |
+| SER | serotonylation  |
+| PR  | propionylation  |
+| BU  | butyrylation    |
+| CR  | crotonylation   |
 
 ## Collaborations
 If you or your institution are interested in collaborating with this project, please send an email to info[at]transcendence.it
