@@ -26,6 +26,9 @@ This encoding scheme is different from the one used in standard 2bit file format
 
 RNA sequences can be stored the same way considering that T and U bases are the same on a "datalink" (OSI 2) level (i.e. they encode the same information with differences in only physical layer).
 
+Sequence is encoding as little-endian from 5' to 3', given that BitSet object use lowest index for LSB, according to the following scheme:
+![Encoding](img/encoding scheme.png)
+
 ### Histones
 Histone modifications are encoded through the Histone class. It comprises enums for the encoding of subunits and modifications and nested HashMap/Sets for storing the modifications themselves. Please read the code itself for further informations.
 Supported modifications are:
