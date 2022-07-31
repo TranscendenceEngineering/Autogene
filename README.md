@@ -26,7 +26,7 @@ This encoding scheme is different from the one used in standard 2bit file format
 
 RNA sequences can be stored the same way considering that T and U bases are the same on a "datalink" (OSI 2) level (i.e. they encode the same information with differences in only physical layer).
 
-Sequence is encoding as little-endian from 5' to 3', given that BitSet object use lowest index for LSB, according to the following scheme:
+Sequence is encodED as little-endian from 5' to 3', given that BitSet object use lowest index for LSB, according to the following scheme:
 
 ![Encoding](/img/encoding-scheme.png)
 
