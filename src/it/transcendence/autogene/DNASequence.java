@@ -5,38 +5,36 @@ import java.util.HashMap;
 
 
 
-public class DNASequence{
-	
-	private BitSet sequence;
-	private int length;
+public class DNASequence extends Sequence {
 
-	public static BitSet a = BitSet.valueOf(new byte[] {0b00});
-	public static BitSet t = BitSet.valueOf(new byte[] {0b11});
-	public static BitSet c = BitSet.valueOf(new byte[] {0b01});
-	public static BitSet g = BitSet.valueOf(new byte[] {0b10});
+	public final static BitSet a = BitSet.valueOf(new byte[] {0b00});
+	public final static BitSet t = BitSet.valueOf(new byte[] {0b11});
+	public final static BitSet c = BitSet.valueOf(new byte[] {0b01});
+	public final static BitSet g = BitSet.valueOf(new byte[] {0b10});
 	
-	private static HashMap<String, BitSet> code(){
-		HashMap<String, BitSet> code = new HashMap<String, BitSet>();
-		code.put("A", a);
-		code.put("a", a);
-		code.put("T", t);
-		code.put("t", t);
-		code.put("C", c);
-		code.put("c", c);
-		code.put("G", g);
-		code.put("g", g);
-		return code;
-	}
-	private static HashMap<BitSet, String> invCode(){
-		HashMap<BitSet, String> invCode = new HashMap<BitSet, String>();
-		invCode.put(a, "A");
-		invCode.put(t, "T");
-		invCode.put(c, "C");
-		invCode.put(g, "G");
-		return invCode;
-	}
-	private static HashMap<String, BitSet> code = code();
-	private static HashMap<BitSet, String> invCode = invCode();
+	private static HashMap<String, BitSet> code = new HashMap<String, BitSet>() {
+		{
+			put("A", a);
+			put("a", a);
+			put("T", t);
+			put("t", t);
+			put("U", t);
+			put("u", t);
+			put("C", c);
+			put("c", c);
+			put("G", g);
+			put("g", g);
+		}
+	};
+	
+	private static HashMap<BitSet, String> invCode = new HashMap<BitSet, String>(){
+		{
+			put(a, "A");
+			put(t, "T");
+			put(c, "C");
+			put(g, "G");
+		}
+	};
 	
 	public void print(BitSet bits) {
 		for(int i=0; i<bits.length()+1; i++) {
@@ -61,10 +59,6 @@ public class DNASequence{
 		reverse.flip(0, l);
 		print(reverse);
 		return reverse;
-	}
-	
-	public BitSet sequence() {
-		return sequence;
 	}
 	
 	public BitSet complementary_sequence() {
@@ -103,11 +97,9 @@ public class DNASequence{
 	
 	public String decode(BitSet seq, int length) {
 		String s = new String();
-		int l = 2*length;
+		int l = 2 * length;
 		for(int i=0; i<l; i+=2) {
-			BitSet base = new BitSet(2);
-			base.set(0, seq.get(i));
-			base.set(1, seq.get(i+1));
+			BitSet base = seq.get(i, i+2);
 			String c = invCode.get(base);
 			s = s + c;
 		}
@@ -144,13 +136,17 @@ public class DNASequence{
 	}
 	
 	public static void main(String[] args) {
-		String s = "TCAGTCAGGG";
+		String s = "AAGGTTTT";
 		System.out.println(s);
 		DNASequence dna = new DNASequence(s);
 		String rs = dna.decode(dna.sequence, dna.length);
 		System.out.println(rs);
 		String inv = dna.decode(dna.reverseSeq(), dna.length);
 		System.out.println(inv);
+		byte[] bytes = dna.sequence.toByteArray();
+		for(byte b:bytes) {
+			System.out.println(Integer.toBinaryString(b).substring(24));
+		}
 	}
 
 }
